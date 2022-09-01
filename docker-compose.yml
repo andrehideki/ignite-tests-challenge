@@ -14,21 +14,21 @@ services:
     volumes:
       - pgdata:/data/postgres
 
-  app:
-    build: .
-    container_name: fin_api
-    ports:
-      - 4000:4000
-    environment:
-      - PORT=4000
-      - DATABASE_URL=database
-    volumes: 
-      - .:/usr/app
-      - /usr/src/app/node_modules
-    links: 
-      - database
-    depends_on:
-      - database
+  # app:
+  #   build: .
+  #   container_name: fin_api
+  #   ports:
+  #     - 4000:4000
+  #   environment:
+  #     - PORT=4000
+  #     - DATABASE_URL=database
+  #   volumes: 
+  #     - .:/usr/app
+  #     - /usr/src/app/node_modules
+  #   links: 
+  #     - database
+  #   depends_on:
+  #     - database
   
 volumes:
   pgdata:
