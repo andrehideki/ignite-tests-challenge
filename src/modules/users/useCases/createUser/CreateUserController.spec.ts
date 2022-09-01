@@ -6,9 +6,12 @@ import { User } from "../../entities/User";
 
 describe("CreateUserController", () => {
    
-    test("[POST]/api/v1/users - Should retrieve 201", async () => {
+    beforeEach(async () => {
         const conn = await createConnection();
         await conn.getRepository(User).delete({});
+    });
+
+    test("[POST]/api/v1/users - Should retrieve 201", async () => {
         await request(app).post("/api/v1/users")
         .send({
             "email": "test@mail.com",
