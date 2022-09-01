@@ -6,7 +6,7 @@ import { User } from "../../entities/User";
 
 describe("CreateUserController", () => {
    
-    test("Should retrieve 201", async () => {
+    test("[POST]/api/v1/users - Should retrieve 201", async () => {
         const conn = await createConnection();
         await conn.getRepository(User).delete({});
         await request(app).post("/api/v1/users")
